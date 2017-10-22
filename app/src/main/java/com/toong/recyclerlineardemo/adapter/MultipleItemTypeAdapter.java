@@ -9,12 +9,12 @@ import android.widget.TextView;
 import com.toong.recyclerlineardemo.R;
 import com.toong.recyclerlineardemo.model.Item;
 
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MultipleItemTypeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Item[] mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
-    public MyAdapter(Context context, Item[] data) {
+    public MultipleItemTypeAdapter(Context context, Item[] data) {
         mInflater = LayoutInflater.from(context);
         mData = data;
     }
@@ -61,11 +61,11 @@ public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         switch (viewType) {
             case 0:
                 View view = mInflater.inflate(R.layout.recyclerview_item, parent, false);
-                MyAdapter.ViewHolder0 viewHolder = new MyAdapter.ViewHolder0(view);
+                MultipleItemTypeAdapter.ViewHolder0 viewHolder = new MultipleItemTypeAdapter.ViewHolder0(view);
                 return viewHolder;
             case 1:
                 View view2 = mInflater.inflate(R.layout.recyclerview_item_2, parent, false);
-                MyAdapter.ViewHolder2 viewHolder2 = new MyAdapter.ViewHolder2(view2);
+                MultipleItemTypeAdapter.ViewHolder2 viewHolder2 = new MultipleItemTypeAdapter.ViewHolder2(view2);
                 return viewHolder2;
         }
         return null;

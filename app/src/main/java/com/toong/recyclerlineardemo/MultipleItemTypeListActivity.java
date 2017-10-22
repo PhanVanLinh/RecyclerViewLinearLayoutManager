@@ -6,14 +6,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.toong.recyclerlineardemo.adapter.MyAdapter;
-import com.toong.recyclerlineardemo.adapter.MyRecyclerViewAdapter;
+import com.toong.recyclerlineardemo.adapter.MultipleItemTypeAdapter;
 import com.toong.recyclerlineardemo.model.Item;
 import java.util.ArrayList;
 
-public class MultipleItemTypeListActivity extends AppCompatActivity implements MyAdapter.ItemClickListener{
+public class MultipleItemTypeListActivity extends AppCompatActivity implements MultipleItemTypeAdapter.ItemClickListener{
     private RecyclerView mRecyclerView;
-    private MyAdapter adapter;
+    private MultipleItemTypeAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class MultipleItemTypeListActivity extends AppCompatActivity implements M
 
         // set up the RecyclerView
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyAdapter(this, data.toArray(new Item[data.size()]));
+        adapter = new MultipleItemTypeAdapter(this, data.toArray(new Item[data.size()]));
         adapter.setClickListener(this);
         mRecyclerView.setAdapter(adapter);
 
